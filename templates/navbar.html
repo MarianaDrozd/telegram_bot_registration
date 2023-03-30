@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}">
+      <h2 class="navbar">Telegram Registration </h2>
+    </a>
+      <span>
+  {% if request.user.is_authenticated %}
+          <ul class="navbar-nav">
+              <ul class="nav-item">
+                <a class="nav-link" role="button" aria-current="page" href="{% url 'account' account.id %}">Account</a>
+              </ul>
+          </ul>
+  {% endif %}
+      </span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  <span class="user-nav">
+      <ul class="nav justify-content-end">
+          {% if request.user.is_authenticated %}
+
+        <ul class="nav-item">
+          <a class="nav-link" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hello, {{ user.username }}!
+          </a>
+        </ul>
+        <ul>
+            <ul>
+              <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </ul>
+        </ul>
+      {% else %}
+       <ul class="navbar-nav">
+          <ul class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </ul>
+
+       </ul>
+      {% endif %}
+
+    </ul>
+  </span>
+  </div>
+</nav>

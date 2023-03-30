@@ -1,0 +1,78 @@
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+.navbar-expand-lg {
+  background-color: #f6e4a1
+}
+.nav-link {
+  font-size: 50px;
+  color: #9942ed;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 2px 2px 2px #ababab
+}
+
+.user-nav {
+  font-size: 50px;
+}
+
+.navbar-brand {
+    color: #9942ed;
+}
+h1 {
+  font-size: 50px;
+  color: black;
+  font-family: "Sofia", sans-serif;
+}
+h5 {
+  color: black;
+  font-family: "Sofia", sans-serif;
+}
+h2.navbar {
+  font-size: 50px;
+  color: #9942ed;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 2px 2px 2px #ababab
+}
+.nav-link:hover { color: #bc95e2; }
+
+.dropdown {
+  position: relative;
+
+}
+.container-fluid-base {
+  background-color: cornsilk;
+}
+
+.justify-content {
+  color: #bc95e2;
+}
+
+.container-fluid-base-footer{
+  background-color: #f1ab41;
+  font-family: "Sofia", sans-serif;
+  font-size: 20px;
+  color: #9942ed;
+}
+.container-fluid-base-footer.a:hover {
+  color: #9942ed;
+}
+.text {
+  color: #9942ed
+}
+.text:hover {
+  color: #ad70e8;
+}
+
+.image1 {
+  padding-top: 100px;
+}
+
+.text1 {
+  text-align: center;
+}
+.p-3 {
+  background-color: rgba(0, 0, 0, 0.2);
+
+}

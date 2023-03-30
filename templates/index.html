@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="index" align="center">
+    {% if request.user.is_authenticated %}
+        <h1>Welcome!</h1>
+    {% else %}
+        <h1>Welcome to the registration page</h1>
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %}
+                <input type="submit" value="Register">
+            </form>
+    {% endif %}
+    </div>
+{% endblock %}

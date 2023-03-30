@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <h1>Account</h1>
+    <ul>
+        <li>Username: {{ account.user.username }}</li>
+        {% if account.user.first_name %}
+            <li>First name: {{ account.user.first_name }}</li>
+            {% endif %}
+        {% if account.user.last_name %}
+            <li>Last name: {{ account.user.last_name }}</li>
+        {% endif %}
+        {% if account.photo_url %}
+            <li>Profile photo: <img src="{{ MEDIA_URL }}{{ account.photo_url }}" alt="photo" width="200px"></li>
+        {% endif %}
+
+    </ul>
+</body>
+{% endblock %}
