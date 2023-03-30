@@ -71,7 +71,6 @@ async def process_last_name(message: types.Message, state: FSMContext):
     async with state.proxy() as data:
         data['last_name'] = message.text
         new_user['last_name'] = data['last_name']
-    await bot.send_message(message.from_user.id, f'Your id: {answer}')
     await message.answer('Please enter your password:')
     await Registration.password.set()
 
