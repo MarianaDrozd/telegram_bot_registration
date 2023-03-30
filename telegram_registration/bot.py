@@ -39,14 +39,12 @@ class Registration(StatesGroup):
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     new_user['telegram_id'] = message.from_id
-    # ask the user to enter their name
     await message.answer('Please enter your username:')
     await Registration.username.set()
 
 
 @dp.message_handler(state=Registration.username)
 async def process_username(message: types.Message, state: FSMContext):
-    # save the user's name and ask them to enter their nickname
     async with state.proxy() as data:
         data['username'] = message.text
         new_user['username'] = data['username']
@@ -56,7 +54,6 @@ async def process_username(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=Registration.first_name)
 async def process_first_name(message: types.Message, state: FSMContext):
-    # save the user's name and ask them to enter their nickname
     async with state.proxy() as data:
         data['first_name'] = message.text
         new_user['first_name'] = data['first_name']
@@ -66,8 +63,6 @@ async def process_first_name(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=Registration.last_name)
 async def process_last_name(message: types.Message, state: FSMContext):
-    # save the user's nickname and end the registration process
-    answer = message.from_id
     async with state.proxy() as data:
         data['last_name'] = message.text
         new_user['last_name'] = data['last_name']
@@ -86,7 +81,6 @@ async def process_password(message: types.Message, state: FSMContext):
 
 @dp.message_handler(state=Registration.password2)
 async def process_password2(message: types.Message, state: FSMContext):
-    # save the user's nickname and end the registration process
     async with state.proxy() as data:
         data['password2'] = message.text
         new_user['password'] = data['password2']
